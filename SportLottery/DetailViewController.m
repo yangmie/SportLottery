@@ -24,6 +24,7 @@
 @synthesize refreshHeaderView;
 @synthesize timer;
 @synthesize reloading;
+@synthesize indicator;
 
 #pragma mark - Managing the detail item
 
@@ -46,16 +47,18 @@
 }
 
 
-- (void)showDetailBK:(BasketballCell *)cell at:(int)row
+- (void)showDetailBK:(BasketballCell *)cell atSection:(int)section at:(int)row
 {
-    NSDictionary *gameInfo = games[row];
+  //  cell.textLabel.text = [[heroicaArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+
+    NSDictionary *gameInfo = [[games objectAtIndex:section] objectAtIndex:row];
     //NSLog(@"%@", [gameInfo objectForKey:@"g_threshold"]);
     float run = [[gameInfo objectForKey:@"g_run_line"] floatValue];
     NSString *runline = (run > 0 ? [[NSString alloc] initWithFormat:@"+%.1f", run] : [[NSString alloc] initWithFormat:@"%.1f", run]);
     cell.odds1.text = [[NSString alloc] initWithFormat:@"%@客勝%@", runline, [gameInfo objectForKey:@"g_away_run_odds"]];
     run = -1 * [[gameInfo objectForKey:@"g_run_line"] floatValue];
     runline = (run > 0 ? [[NSString alloc] initWithFormat:@"+%.1f", run] : [[NSString alloc] initWithFormat:@"%.1f", run]);
-    cell.odds2.text = [[NSString alloc] initWithFormat:@"%@主勝%@", runline, [gameInfo objectForKey:@"g_away_run_odds"]];
+    cell.odds2.text = [[NSString alloc] initWithFormat:@"%@主勝%@", runline, [gameInfo objectForKey:@"g_home_run_odds"]];
     cell.odds.text = (run > 0 ? [[NSString alloc] initWithFormat:@"主受讓%.1f", run] : [[NSString alloc] initWithFormat:@"主讓%.1f", -1*run]);
     NSString *threshold = [gameInfo objectForKey:@"g_threshold"];
     cell.gid.text = [gameInfo objectForKey:@"g_lottery_id"];
@@ -84,9 +87,9 @@
     
 }
 
-- (void)showDetailFB:(BasketballCell *)cell at:(int)row
+- (void)showDetailFB:(BasketballCell *)cell atSection:(int)section at:(int)row
 {
-    NSDictionary *gameInfo = games[row];
+    NSDictionary *gameInfo = [[games objectAtIndex:section] objectAtIndex:row];
     
     NSString *threshold = [gameInfo objectForKey:@"g_threshold"];
     cell.gid.text = [gameInfo objectForKey:@"g_lottery_id"];
@@ -114,7 +117,7 @@
     return;
 }
 
-- (void)showDetailBB:(BasketballCell *)cell at:(int)row
+- (void)showDetailBB:(BasketballCell *)cell atSection:(int)section at:(int)row
 {
     return;
 }
@@ -122,6 +125,12 @@
 
 - (void)getGameInfo
 {
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    [indicator startAnimating];
+
     NSLog(@"reload");
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys: [self sportType], @"SportType", nil];
 	
@@ -160,8 +169,8 @@
                 [playing insertObject:status atIndex:playing.count];
             }
         }
-        games = [NSMutableArray arrayWithArray:coming];
-        [games addObjectsFromArray:playing];
+        games = [[NSMutableArray alloc] initWithObjects:coming, playing, nil];
+        //[games addObjectsFromArray:playing];
     }
     else {
         [games removeAllObjects];
@@ -178,10 +187,13 @@
                 [playing insertObject:status atIndex:playing.count];
             }
         }
-        games = [NSMutableArray arrayWithArray:coming];
-        [games addObjectsFromArray:playing];
-        [self.tableView reloadData];
+        games = [[NSMutableArray alloc] initWithObjects:coming, playing, nil];
+        //[games addObjectsFromArray:playing];
+       // [self.tableView reloadData];
     }
+    
+    [indicator stopAnimating];
+    [self.tableView reloadData];
     return;
 }
 
@@ -204,18 +216,33 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self getGameInfo];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getGameInfo];
+  //  [self getGameInfo];
 	// Do any additional setup after loading the view, typically from a nib.
     
     //設置timer
-    timer=[NSTimer scheduledTimerWithTimeInterval:60
+    timer = [NSTimer scheduledTimerWithTimeInterval:60
                                            target:self
                                          selector:@selector(getGameInfo)
                                          userInfo:nil
                                           repeats:YES];
+    //設置更新動畫
+    indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    [indicator startAnimating];
+    
     // 下拉更新
     if (refreshHeaderView == nil)
     {
@@ -303,7 +330,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [games count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -312,17 +339,36 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return games.count;
+    return [[games objectAtIndex:section] count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"尚未開賽";
+            break;
+            
+        case 1:
+            return @"已封盤";
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
 
 
 // this class decide which type of cells we want to show(basketball, football, or instant score)
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
     if ([[self sportType] isEqualToString:@"bk"])
     {
-        NSDictionary *gameInfo = games[indexPath.row];
+        
+      //  NSDictionary *gameInfo = games[indexPath.row];
+        NSDictionary *gameInfo = [[games objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         NSString *lotteryStatus = [gameInfo objectForKey:@"lottery_status"];
         if ([lotteryStatus isEqualToString:@"OPEN"])
         {
@@ -331,7 +377,7 @@
             if (cell == nil) {
                 cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            [self showDetailBK: cell at:indexPath.row];
+            [self showDetailBK: cell atSection:indexPath.section at:indexPath.row];
             return cell;
         }
         else
@@ -341,13 +387,16 @@
             if (cell == nil) {
                 cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            [self showDetailBK: cell at:indexPath.row];
+            //[self showDetailBK: cell at:indexPath.row];
+            [self showDetailBK: cell atSection:indexPath.section at:indexPath.row];
+
             return cell;
         }
     }
     else if ([[self sportType] isEqualToString:@"fb"])
     {
-        NSDictionary *gameInfo = games[indexPath.row];
+        //NSDictionary *gameInfo = games[indexPath.row];
+        NSDictionary *gameInfo = [[games objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         NSString *lotteryStatus = [gameInfo objectForKey:@"lottery_status"];
         if ([lotteryStatus isEqualToString:@"OPEN"])
         {
@@ -356,7 +405,7 @@
             if (cell == nil) {
                 cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            [self showDetailFB: cell at:indexPath.row];
+            [self showDetailFB: cell atSection:indexPath.section at:indexPath.row];
             return cell;
         }
         else
@@ -366,7 +415,7 @@
             if (cell == nil) {
                 cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            [self showDetailFB: cell at:indexPath.row];
+            [self showDetailFB: cell atSection:indexPath.section at:indexPath.row];
             return cell;
         }
 
@@ -378,7 +427,7 @@
         if (cell == nil) {
             cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        [self showDetailBB: cell at:indexPath.row];
+        [self showDetailBB: cell atSection:indexPath.section at:indexPath.row];
         return cell;
 
     }
@@ -414,7 +463,7 @@
     //檢測網路連線
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkCheck" object:nil];
     
-    NSDictionary *game = games[indexPath.row];
+    NSDictionary *game = [[games objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
     {
@@ -425,7 +474,7 @@
         //透過標簽取得目標實體
          self.dataCenterViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DataCenter"];
         //傳遞參數
-        [self.dataCenterViewController setDetailItem:[games objectAtIndex:indexPath.row] type:[self sportType]];
+        [self.dataCenterViewController setDetailItem:game type:[self sportType]];
         //切換畫面
         [self.navigationController pushViewController:self.dataCenterViewController animated:YES];
     }

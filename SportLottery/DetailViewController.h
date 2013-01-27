@@ -20,15 +20,17 @@
 @property (strong, nonatomic) DataCenterViewController *dataCenterViewController;
 @property NSTimer *timer;
 @property (strong, nonatomic) EGORefreshTableHeaderView *refreshHeaderView;
-@property (assign, nonatomic)BOOL reloading;
+@property (assign, nonatomic) BOOL reloading;
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
+
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;
 
 //-(void)initNewObject: (NSDictionary *)status;
 -(void)getGameInfo;
 -(NSString *)sportType;
-- (void)showDetailBK:(BasketballCell *)cell at:(int)row;
-- (void)showDetailFB:(BasketballCell *)cell at:(int)row;
-- (void)showDetailBB:(BasketballCell *)cell at:(int)row;
+- (void)showDetailBK:(BasketballCell *)cell atSection:(int)section at:(int)row;
+- (void)showDetailFB:(BasketballCell *)cell atSection:(int)section at:(int)row;
+- (void)showDetailBB:(BasketballCell *)cell atSection:(int)section at:(int)row;
 
 @end
