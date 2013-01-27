@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasketballCell.h"
+
 
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController
+{
+    BOOL networkStatus;
+}
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+@property BOOL networkStatus;
+
+-(void)initNewObject: (NSString *)sport;
 
 @end

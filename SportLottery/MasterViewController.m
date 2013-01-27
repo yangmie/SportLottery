@@ -7,8 +7,14 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <arpa/inet.h>
+#import <netdb.h>
+#import <SystemConfiguration/SCNetworkReachability.h>
+
+
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -16,6 +22,7 @@
 @end
 
 @implementation MasterViewController
+@synthesize networkStatus;
 
 - (void)awakeFromNib
 {
@@ -30,12 +37,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    /*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+     
+     */
+    
+    [self initNewObject: @"棒球"];
+    [self initNewObject: @"籃球"];
+    [self initNewObject: @"足球"];
+    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"NetworkChanged" object:nil];
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -43,15 +63,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)initNewObject: (NSString *)sport
 {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_objects insertObject:sport atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
+/*
+- (BOOL) connectedToNetwork
+{
+	// Create zero addy
+	struct sockaddr_in zeroAddress;
+	bzero(&zeroAddress, sizeof(zeroAddress));
+	zeroAddress.sin_len = sizeof(zeroAddress);
+	zeroAddress.sin_family = AF_INET;
+    
+	// Recover reachability flags
+	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+	SCNetworkReachabilityFlags flags;
+    
+	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+	CFRelease(defaultRouteReachability);
+    
+	if (!didRetrieveFlags)
+	{
+		return NO;
+	}
+    
+	BOOL isReachable = flags & kSCNetworkFlagsReachable;
+	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
+	return (isReachable && !needsConnection) ? YES : NO;
+}
+ */
 
 #pragma mark - Table View
 
@@ -65,14 +113,30 @@
     return _objects.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (BasketballCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    
+    static NSString *CellIdentifier = @"SportCell";
+    BasketballCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[BasketballCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+   
     NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+   // self.sportLabel.text = [object description];
+    cell.sportName.text = [object description];
+    
+   // cell.textLabel.text = [object description];
+   // cell.imageView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@.jpg", object.description]];
+
+    
     return cell;
 }
+
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -80,15 +144,7 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+
 
 /*
 // Override to support rearranging the table view.
@@ -108,9 +164,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //檢測網路連線    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkCheck" object:nil];
+    
+    NSDate *object = _objects[indexPath.row];
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
-        self.detailViewController.detailItem = object;
+                self.detailViewController.detailItem = object;
+    } else {
+        //透過標簽取得目標實體
+        DetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+        //傳遞參數
+        [detailView setDetailItem:[_objects objectAtIndex:indexPath.row]];
+        //切換畫面
+        [self.navigationController pushViewController:detailView animated:YES];
+    
     }
 }
 

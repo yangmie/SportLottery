@@ -25,6 +25,38 @@
 		FE1207B51685751000153B86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE12078A1685750F00153B86 /* Foundation.framework */; };
 		FE1207BD1685751000153B86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE1207BB1685751000153B86 /* InfoPlist.strings */; };
 		FE1207C01685751000153B86 /* SportLotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1207BF1685751000153B86 /* SportLotteryTests.m */; };
+		FE12517216A8EA5100ADDF07 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE12517116A8EA5100ADDF07 /* logo.png */; };
+		FE12517416A8EC5100ADDF07 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE12517316A8EC5100ADDF07 /* logo.png */; };
+		FE579EAC1686F83F00DA1801 /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EAB1686F83F00DA1801 /* Connector.m */; };
+		FE579EC71687280D00DA1801 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EAF1687280D00DA1801 /* NSObject+SBJson.m */; };
+		FE579EC81687280D00DA1801 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EB21687280D00DA1801 /* SBJsonParser.m */; };
+		FE579EC91687280D00DA1801 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EB41687280D00DA1801 /* SBJsonStreamParser.m */; };
+		FE579ECA1687280D00DA1801 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EB61687280D00DA1801 /* SBJsonStreamParserAccumulator.m */; };
+		FE579ECB1687280D00DA1801 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EB81687280D00DA1801 /* SBJsonStreamParserAdapter.m */; };
+		FE579ECC1687280E00DA1801 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EBA1687280D00DA1801 /* SBJsonStreamParserState.m */; };
+		FE579ECD1687280E00DA1801 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EBC1687280D00DA1801 /* SBJsonStreamWriter.m */; };
+		FE579ECE1687280E00DA1801 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EBE1687280D00DA1801 /* SBJsonStreamWriterAccumulator.m */; };
+		FE579ECF1687280E00DA1801 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EC01687280D00DA1801 /* SBJsonStreamWriterState.m */; };
+		FE579ED01687280E00DA1801 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EC21687280D00DA1801 /* SBJsonTokeniser.m */; };
+		FE579ED11687280E00DA1801 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EC41687280D00DA1801 /* SBJsonUTF8Stream.m */; };
+		FE579ED21687280E00DA1801 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EC61687280D00DA1801 /* SBJsonWriter.m */; };
+		FE579ED51687620600DA1801 /* BasketballCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579ED41687620600DA1801 /* BasketballCell.m */; };
+		FE579ED8168869F600DA1801 /* AllDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579ED7168869F600DA1801 /* AllDataViewController.m */; };
+		FEAF3EAA168618D500EF279E /* 籃球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EA9168618D500EF279E /* 籃球.jpg */; };
+		FEAF3EAF168618F000EF279E /* 棒球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EAE168618F000EF279E /* 棒球.jpg */; };
+		FEAF3EB11686197500EF279E /* 足球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EB01686197500EF279E /* 足球.jpg */; };
+		FEDD95CE168B56B700B91622 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD95CD168B56B700B91622 /* SystemConfiguration.framework */; };
+		FEDD95D2168C22DD00B91622 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */; };
+		FEDD95DC168C22F900B91622 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D4168C22F900B91622 /* blackArrow.png */; };
+		FEDD95DD168C22F900B91622 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D5168C22F900B91622 /* blackArrow@2x.png */; };
+		FEDD95DE168C22F900B91622 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D6168C22F900B91622 /* blueArrow.png */; };
+		FEDD95DF168C22F900B91622 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D7168C22F900B91622 /* blueArrow@2x.png */; };
+		FEDD95E0168C22F900B91622 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D8168C22F900B91622 /* grayArrow.png */; };
+		FEDD95E1168C22F900B91622 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D9168C22F900B91622 /* grayArrow@2x.png */; };
+		FEDD95E2168C22F900B91622 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95DA168C22F900B91622 /* whiteArrow.png */; };
+		FEDD95E3168C22F900B91622 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95DB168C22F900B91622 /* whiteArrow@2x.png */; };
+		FEDD95E5168C246200B91622 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD95E4168C246200B91622 /* QuartzCore.framework */; };
+		FEDD95E8168C663000B91622 /* DataCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD95E7168C663000B91622 /* DataCenterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +95,56 @@
 		FE1207BC1685751000153B86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FE1207BE1685751000153B86 /* SportLotteryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportLotteryTests.h; sourceTree = "<group>"; };
 		FE1207BF1685751000153B86 /* SportLotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportLotteryTests.m; sourceTree = "<group>"; };
+		FE12517116A8EA5100ADDF07 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		FE12517316A8EC5100ADDF07 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		FE579EAA1686F83F00DA1801 /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
+		FE579EAB1686F83F00DA1801 /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
+		FE579EAE1687280D00DA1801 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		FE579EAF1687280D00DA1801 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		FE579EB01687280D00DA1801 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		FE579EB11687280D00DA1801 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		FE579EB21687280D00DA1801 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		FE579EB31687280D00DA1801 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		FE579EB41687280D00DA1801 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		FE579EB51687280D00DA1801 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		FE579EB61687280D00DA1801 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		FE579EB71687280D00DA1801 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		FE579EB81687280D00DA1801 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		FE579EB91687280D00DA1801 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		FE579EBA1687280D00DA1801 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		FE579EBB1687280D00DA1801 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		FE579EBC1687280D00DA1801 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		FE579EBD1687280D00DA1801 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		FE579EBE1687280D00DA1801 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		FE579EBF1687280D00DA1801 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		FE579EC01687280D00DA1801 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		FE579EC11687280D00DA1801 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		FE579EC21687280D00DA1801 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		FE579EC31687280D00DA1801 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		FE579EC41687280D00DA1801 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		FE579EC51687280D00DA1801 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		FE579EC61687280D00DA1801 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		FE579ED31687620600DA1801 /* BasketballCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasketballCell.h; sourceTree = "<group>"; };
+		FE579ED41687620600DA1801 /* BasketballCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketballCell.m; sourceTree = "<group>"; };
+		FE579ED6168869F600DA1801 /* AllDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDataViewController.h; sourceTree = "<group>"; };
+		FE579ED7168869F600DA1801 /* AllDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDataViewController.m; sourceTree = "<group>"; };
+		FEAF3EA9168618D500EF279E /* 籃球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "籃球.jpg"; sourceTree = "<group>"; };
+		FEAF3EAE168618F000EF279E /* 棒球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "棒球.jpg"; sourceTree = "<group>"; };
+		FEAF3EB01686197500EF279E /* 足球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "足球.jpg"; sourceTree = "<group>"; };
+		FEDD95CD168B56B700B91622 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FEDD95D0168C22DD00B91622 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		FEDD95D4168C22F900B91622 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		FEDD95D5168C22F900B91622 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		FEDD95D6168C22F900B91622 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		FEDD95D7168C22F900B91622 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		FEDD95D8168C22F900B91622 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		FEDD95D9168C22F900B91622 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		FEDD95DA168C22F900B91622 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		FEDD95DB168C22F900B91622 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		FEDD95E4168C246200B91622 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FEDD95E6168C663000B91622 /* DataCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenterViewController.h; sourceTree = "<group>"; };
+		FEDD95E7168C663000B91622 /* DataCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +152,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDD95E5168C246200B91622 /* QuartzCore.framework in Frameworks */,
+				FEDD95CE168B56B700B91622 /* SystemConfiguration.framework in Frameworks */,
 				FE1207891685750F00153B86 /* UIKit.framework in Frameworks */,
 				FE12078B1685750F00153B86 /* Foundation.framework in Frameworks */,
 				FE12078D1685750F00153B86 /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +176,8 @@
 		FE1207791685750F00153B86 = {
 			isa = PBXGroup;
 			children = (
+				FE12517116A8EA5100ADDF07 /* logo.png */,
+				FEDD95E4168C246200B91622 /* QuartzCore.framework */,
 				FE12078E1685751000153B86 /* SportLottery */,
 				FE1207B81685751000153B86 /* SportLotteryTests */,
 				FE1207871685750F00153B86 /* Frameworks */,
@@ -111,6 +197,7 @@
 		FE1207871685750F00153B86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEDD95CD168B56B700B91622 /* SystemConfiguration.framework */,
 				FE1207881685750F00153B86 /* UIKit.framework */,
 				FE12078A1685750F00153B86 /* Foundation.framework */,
 				FE12078C1685750F00153B86 /* CoreGraphics.framework */,
@@ -122,14 +209,13 @@
 		FE12078E1685751000153B86 /* SportLottery */ = {
 			isa = PBXGroup;
 			children = (
+				FE579EAD1687280D00DA1801 /* Classes */,
+				FE579EA81686F75E00DA1801 /* views */,
+				FE579EA91686F7E600DA1801 /* models */,
 				FE1207971685751000153B86 /* AppDelegate.h */,
 				FE1207981685751000153B86 /* AppDelegate.m */,
 				FE1207A01685751000153B86 /* MainStoryboard_iPhone.storyboard */,
 				FE1207A31685751000153B86 /* MainStoryboard_iPad.storyboard */,
-				FE1207A61685751000153B86 /* MasterViewController.h */,
-				FE1207A71685751000153B86 /* MasterViewController.m */,
-				FE1207A91685751000153B86 /* DetailViewController.h */,
-				FE1207AA1685751000153B86 /* DetailViewController.m */,
 				FE12078F1685751000153B86 /* Supporting Files */,
 			);
 			path = SportLottery;
@@ -138,9 +224,10 @@
 		FE12078F1685751000153B86 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE579EA61686F70F00DA1801 /* image */,
 				FE1207901685751000153B86 /* SportLottery-Info.plist */,
-				FE1207911685751000153B86 /* InfoPlist.strings */,
 				FE1207941685751000153B86 /* main.m */,
+				FE1207911685751000153B86 /* InfoPlist.strings */,
 				FE1207961685751000153B86 /* SportLottery-Prefix.pch */,
 				FE12079A1685751000153B86 /* Default.png */,
 				FE12079C1685751000153B86 /* Default@2x.png */,
@@ -166,6 +253,103 @@
 				FE1207BB1685751000153B86 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE579EA61686F70F00DA1801 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				FEDD95D3168C22F900B91622 /* Resources */,
+				FEAF3EAE168618F000EF279E /* 棒球.jpg */,
+				FE12517316A8EC5100ADDF07 /* logo.png */,
+				FEAF3EA9168618D500EF279E /* 籃球.jpg */,
+				FEAF3EB01686197500EF279E /* 足球.jpg */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		FE579EA81686F75E00DA1801 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FE1207A61685751000153B86 /* MasterViewController.h */,
+				FE1207A71685751000153B86 /* MasterViewController.m */,
+				FE1207A91685751000153B86 /* DetailViewController.h */,
+				FE1207AA1685751000153B86 /* DetailViewController.m */,
+				FE579ED31687620600DA1801 /* BasketballCell.h */,
+				FE579ED41687620600DA1801 /* BasketballCell.m */,
+				FE579ED6168869F600DA1801 /* AllDataViewController.h */,
+				FE579ED7168869F600DA1801 /* AllDataViewController.m */,
+				FEDD95E6168C663000B91622 /* DataCenterViewController.h */,
+				FEDD95E7168C663000B91622 /* DataCenterViewController.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		FE579EA91686F7E600DA1801 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FE579EAA1686F83F00DA1801 /* Connector.h */,
+				FE579EAB1686F83F00DA1801 /* Connector.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		FE579EAD1687280D00DA1801 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FEDD95CF168C22DD00B91622 /* View */,
+				FE579EAE1687280D00DA1801 /* NSObject+SBJson.h */,
+				FE579EAF1687280D00DA1801 /* NSObject+SBJson.m */,
+				FE579EB01687280D00DA1801 /* SBJson.h */,
+				FE579EB11687280D00DA1801 /* SBJsonParser.h */,
+				FE579EB21687280D00DA1801 /* SBJsonParser.m */,
+				FE579EB31687280D00DA1801 /* SBJsonStreamParser.h */,
+				FE579EB41687280D00DA1801 /* SBJsonStreamParser.m */,
+				FE579EB51687280D00DA1801 /* SBJsonStreamParserAccumulator.h */,
+				FE579EB61687280D00DA1801 /* SBJsonStreamParserAccumulator.m */,
+				FE579EB71687280D00DA1801 /* SBJsonStreamParserAdapter.h */,
+				FE579EB81687280D00DA1801 /* SBJsonStreamParserAdapter.m */,
+				FE579EB91687280D00DA1801 /* SBJsonStreamParserState.h */,
+				FE579EBA1687280D00DA1801 /* SBJsonStreamParserState.m */,
+				FE579EBB1687280D00DA1801 /* SBJsonStreamWriter.h */,
+				FE579EBC1687280D00DA1801 /* SBJsonStreamWriter.m */,
+				FE579EBD1687280D00DA1801 /* SBJsonStreamWriterAccumulator.h */,
+				FE579EBE1687280D00DA1801 /* SBJsonStreamWriterAccumulator.m */,
+				FE579EBF1687280D00DA1801 /* SBJsonStreamWriterState.h */,
+				FE579EC01687280D00DA1801 /* SBJsonStreamWriterState.m */,
+				FE579EC11687280D00DA1801 /* SBJsonTokeniser.h */,
+				FE579EC21687280D00DA1801 /* SBJsonTokeniser.m */,
+				FE579EC31687280D00DA1801 /* SBJsonUTF8Stream.h */,
+				FE579EC41687280D00DA1801 /* SBJsonUTF8Stream.m */,
+				FE579EC51687280D00DA1801 /* SBJsonWriter.h */,
+				FE579EC61687280D00DA1801 /* SBJsonWriter.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FEDD95CF168C22DD00B91622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEDD95D0168C22DD00B91622 /* EGORefreshTableHeaderView.h */,
+				FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */,
+			);
+			name = View;
+			path = "../../../../Downloads/EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Classes/View";
+			sourceTree = "<group>";
+		};
+		FEDD95D3168C22F900B91622 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEDD95D4168C22F900B91622 /* blackArrow.png */,
+				FEDD95D5168C22F900B91622 /* blackArrow@2x.png */,
+				FEDD95D6168C22F900B91622 /* blueArrow.png */,
+				FEDD95D7168C22F900B91622 /* blueArrow@2x.png */,
+				FEDD95D8168C22F900B91622 /* grayArrow.png */,
+				FEDD95D9168C22F900B91622 /* grayArrow@2x.png */,
+				FEDD95DA168C22F900B91622 /* whiteArrow.png */,
+				FEDD95DB168C22F900B91622 /* whiteArrow@2x.png */,
+			);
+			name = Resources;
+			path = "../../../Downloads/EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +429,19 @@
 				FE12079F1685751000153B86 /* Default-568h@2x.png in Resources */,
 				FE1207A21685751000153B86 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FE1207A51685751000153B86 /* MainStoryboard_iPad.storyboard in Resources */,
+				FEAF3EAA168618D500EF279E /* 籃球.jpg in Resources */,
+				FEAF3EAF168618F000EF279E /* 棒球.jpg in Resources */,
+				FEAF3EB11686197500EF279E /* 足球.jpg in Resources */,
+				FEDD95DC168C22F900B91622 /* blackArrow.png in Resources */,
+				FEDD95DD168C22F900B91622 /* blackArrow@2x.png in Resources */,
+				FEDD95DE168C22F900B91622 /* blueArrow.png in Resources */,
+				FEDD95DF168C22F900B91622 /* blueArrow@2x.png in Resources */,
+				FEDD95E0168C22F900B91622 /* grayArrow.png in Resources */,
+				FEDD95E1168C22F900B91622 /* grayArrow@2x.png in Resources */,
+				FEDD95E2168C22F900B91622 /* whiteArrow.png in Resources */,
+				FEDD95E3168C22F900B91622 /* whiteArrow@2x.png in Resources */,
+				FE12517216A8EA5100ADDF07 /* logo.png in Resources */,
+				FE12517416A8EC5100ADDF07 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +480,23 @@
 				FE1207991685751000153B86 /* AppDelegate.m in Sources */,
 				FE1207A81685751000153B86 /* MasterViewController.m in Sources */,
 				FE1207AB1685751000153B86 /* DetailViewController.m in Sources */,
+				FE579EAC1686F83F00DA1801 /* Connector.m in Sources */,
+				FE579EC71687280D00DA1801 /* NSObject+SBJson.m in Sources */,
+				FE579EC81687280D00DA1801 /* SBJsonParser.m in Sources */,
+				FE579EC91687280D00DA1801 /* SBJsonStreamParser.m in Sources */,
+				FE579ECA1687280D00DA1801 /* SBJsonStreamParserAccumulator.m in Sources */,
+				FE579ECB1687280D00DA1801 /* SBJsonStreamParserAdapter.m in Sources */,
+				FE579ECC1687280E00DA1801 /* SBJsonStreamParserState.m in Sources */,
+				FE579ECD1687280E00DA1801 /* SBJsonStreamWriter.m in Sources */,
+				FE579ECE1687280E00DA1801 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				FE579ECF1687280E00DA1801 /* SBJsonStreamWriterState.m in Sources */,
+				FE579ED01687280E00DA1801 /* SBJsonTokeniser.m in Sources */,
+				FE579ED11687280E00DA1801 /* SBJsonUTF8Stream.m in Sources */,
+				FE579ED21687280E00DA1801 /* SBJsonWriter.m in Sources */,
+				FE579ED51687620600DA1801 /* BasketballCell.m in Sources */,
+				FE579ED8168869F600DA1801 /* AllDataViewController.m in Sources */,
+				FEDD95D2168C22DD00B91622 /* EGORefreshTableHeaderView.m in Sources */,
+				FEDD95E8168C663000B91622 /* DataCenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +563,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yu-Chung Yang (5GJM24M2S2)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -359,11 +573,13 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				"GCC_SYMBOLS_PRIVATE_EXTERN[arch=*]" = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,14 +594,16 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yu-Chung Yang (5GJM24M2S2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -395,10 +613,13 @@
 		FE1207C41685751000153B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yu-Chung Yang (5GJM24M2S2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SportLottery/SportLottery-Prefix.pch";
+				"GCC_SYMBOLS_PRIVATE_EXTERN[arch=*]" = YES;
 				INFOPLIST_FILE = "SportLottery/SportLottery-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -467,6 +688,7 @@
 				FE1207C51685751000153B86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE1207C61685751000153B86 /* Build configuration list for PBXNativeTarget "SportLotteryTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +697,7 @@
 				FE1207C81685751000153B86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

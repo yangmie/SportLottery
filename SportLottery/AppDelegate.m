@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 
+
+
 @implementation AppDelegate
+@synthesize networkStatus;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,8 +21,52 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"NetworkCheck" object:nil];
+    //NSLog(@"thx");
     return YES;
 }
+
+- (BOOL) connectedToNetwork
+{
+	// Create zero addy
+	struct sockaddr_in zeroAddress;
+	bzero(&zeroAddress, sizeof(zeroAddress));
+	zeroAddress.sin_len = sizeof(zeroAddress);
+	zeroAddress.sin_family = AF_INET;
+    
+	// Recover reachability flags
+	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+	SCNetworkReachabilityFlags flags;
+    
+	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+	CFRelease(defaultRouteReachability);
+    
+	if (!didRetrieveFlags)
+	{
+		return NO;
+	}
+    
+	BOOL isReachable = flags & kSCNetworkFlagsReachable;
+	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
+	return (isReachable && !needsConnection) ? YES : NO;
+}
+
+- (void)updateStatus {
+    self.networkStatus = [self connectedToNetwork];
+    //NSLog(@"%@", networkStatus);
+}
+
+
+- (void)reachabilityChanged:(NSNotification *)note {
+    [self updateStatus];
+    if (self.networkStatus == NO) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"運動彩券", nil) message:NSLocalizedString(@"請連接網路", nil)
+                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -47,5 +94,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end
