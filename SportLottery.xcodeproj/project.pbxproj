@@ -42,11 +42,8 @@
 		FE579ED21687280E00DA1801 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579EC61687280D00DA1801 /* SBJsonWriter.m */; };
 		FE579ED51687620600DA1801 /* BasketballCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579ED41687620600DA1801 /* BasketballCell.m */; };
 		FE579ED8168869F600DA1801 /* AllDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE579ED7168869F600DA1801 /* AllDataViewController.m */; };
-		FEAF3EAA168618D500EF279E /* 籃球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EA9168618D500EF279E /* 籃球.jpg */; };
-		FEAF3EAF168618F000EF279E /* 棒球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EAE168618F000EF279E /* 棒球.jpg */; };
-		FEAF3EB11686197500EF279E /* 足球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAF3EB01686197500EF279E /* 足球.jpg */; };
+		FEC8889F16B4D75400DE45DC /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC8889E16B4D75400DE45DC /* EGORefreshTableHeaderView.m */; };
 		FEDD95CE168B56B700B91622 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD95CD168B56B700B91622 /* SystemConfiguration.framework */; };
-		FEDD95D2168C22DD00B91622 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */; };
 		FEDD95DC168C22F900B91622 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D4168C22F900B91622 /* blackArrow.png */; };
 		FEDD95DD168C22F900B91622 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D5168C22F900B91622 /* blackArrow@2x.png */; };
 		FEDD95DE168C22F900B91622 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD95D6168C22F900B91622 /* blueArrow.png */; };
@@ -128,12 +125,9 @@
 		FE579ED41687620600DA1801 /* BasketballCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketballCell.m; sourceTree = "<group>"; };
 		FE579ED6168869F600DA1801 /* AllDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDataViewController.h; sourceTree = "<group>"; };
 		FE579ED7168869F600DA1801 /* AllDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDataViewController.m; sourceTree = "<group>"; };
-		FEAF3EA9168618D500EF279E /* 籃球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "籃球.jpg"; sourceTree = "<group>"; };
-		FEAF3EAE168618F000EF279E /* 棒球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "棒球.jpg"; sourceTree = "<group>"; };
-		FEAF3EB01686197500EF279E /* 足球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "足球.jpg"; sourceTree = "<group>"; };
+		FEC8889D16B4D75400DE45DC /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGORefreshTableHeaderView.h; path = SportLottery/EGORefreshTableHeaderView.h; sourceTree = SOURCE_ROOT; };
+		FEC8889E16B4D75400DE45DC /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = SportLottery/EGORefreshTableHeaderView.m; sourceTree = SOURCE_ROOT; };
 		FEDD95CD168B56B700B91622 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FEDD95D0168C22DD00B91622 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
-		FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		FEDD95D4168C22F900B91622 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
 		FEDD95D5168C22F900B91622 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
 		FEDD95D6168C22F900B91622 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
@@ -259,10 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				FEDD95D3168C22F900B91622 /* Resources */,
-				FEAF3EAE168618F000EF279E /* 棒球.jpg */,
 				FE12517316A8EC5100ADDF07 /* logo.png */,
-				FEAF3EA9168618D500EF279E /* 籃球.jpg */,
-				FEAF3EB01686197500EF279E /* 足球.jpg */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -329,8 +320,8 @@
 		FEDD95CF168C22DD00B91622 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FEDD95D0168C22DD00B91622 /* EGORefreshTableHeaderView.h */,
-				FEDD95D1168C22DD00B91622 /* EGORefreshTableHeaderView.m */,
+				FEC8889D16B4D75400DE45DC /* EGORefreshTableHeaderView.h */,
+				FEC8889E16B4D75400DE45DC /* EGORefreshTableHeaderView.m */,
 			);
 			name = View;
 			path = "../../../../Downloads/EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Classes/View";
@@ -429,9 +420,6 @@
 				FE12079F1685751000153B86 /* Default-568h@2x.png in Resources */,
 				FE1207A21685751000153B86 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FE1207A51685751000153B86 /* MainStoryboard_iPad.storyboard in Resources */,
-				FEAF3EAA168618D500EF279E /* 籃球.jpg in Resources */,
-				FEAF3EAF168618F000EF279E /* 棒球.jpg in Resources */,
-				FEAF3EB11686197500EF279E /* 足球.jpg in Resources */,
 				FEDD95DC168C22F900B91622 /* blackArrow.png in Resources */,
 				FEDD95DD168C22F900B91622 /* blackArrow@2x.png in Resources */,
 				FEDD95DE168C22F900B91622 /* blueArrow.png in Resources */,
@@ -495,8 +483,8 @@
 				FE579ED21687280E00DA1801 /* SBJsonWriter.m in Sources */,
 				FE579ED51687620600DA1801 /* BasketballCell.m in Sources */,
 				FE579ED8168869F600DA1801 /* AllDataViewController.m in Sources */,
-				FEDD95D2168C22DD00B91622 /* EGORefreshTableHeaderView.m in Sources */,
 				FEDD95E8168C663000B91622 /* DataCenterViewController.m in Sources */,
+				FEC8889F16B4D75400DE45DC /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
